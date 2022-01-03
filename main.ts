@@ -2,7 +2,7 @@ devices.onGamepadButton(MesDpadButtonInfo.DUp, function () {
     stop()
 })
 function turnright () {
-    wuKong.setMotorSpeed(wuKong.MotorList.M2, 30)
+    wuKong.setMotorSpeed(wuKong.MotorList.M2, 20)
     basic.showArrow(ArrowNames.East)
 }
 bluetooth.onBluetoothConnected(function () {
@@ -54,7 +54,7 @@ devices.onGamepadButton(MesDpadButtonInfo._1Up, function () {
     stop()
 })
 function turnleft () {
-    wuKong.setMotorSpeed(wuKong.MotorList.M2, -30)
+    wuKong.setMotorSpeed(wuKong.MotorList.M2, -20)
     basic.showArrow(ArrowNames.West)
 }
 devices.onGamepadButton(MesDpadButtonInfo.AUp, function () {
