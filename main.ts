@@ -25,10 +25,20 @@ devices.onGamepadButton(MesDpadButtonInfo.CDown, function () {
     turnleft()
 })
 function clawdown () {
-    basic.showArrow(ArrowNames.South)
+    if (v < 40) {
+        v += 1
+        basic.pause(100)
+        wuKong.setServoAngle(wuKong.ServoTypeList._270, wuKong.ServoList.S0, v)
+    }
+    basic.showNumber(v)
 }
 function clawup () {
-    basic.showArrow(ArrowNames.North)
+    if (v > 0) {
+        v += -1
+        basic.pause(100)
+        wuKong.setServoAngle(wuKong.ServoTypeList._270, wuKong.ServoList.S0, v)
+    }
+    basic.showNumber(v)
 }
 devices.onGamepadButton(MesDpadButtonInfo.ADown, function () {
     clawup()
@@ -63,4 +73,7 @@ devices.onGamepadButton(MesDpadButtonInfo.AUp, function () {
 devices.onGamepadButton(MesDpadButtonInfo.CUp, function () {
     stop()
 })
+let v = 0
 bluetooth.startLEDService()
+v = 0
+wuKong.setServoAngle(wuKong.ServoTypeList._270, wuKong.ServoList.S0, v)
